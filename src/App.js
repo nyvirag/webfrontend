@@ -23,6 +23,8 @@ import ProbaAdmin from './sajatosztalyok/ProbaAdmin'
 import KeresSzoveg from "./sajatosztalyok/KeresSzoveg";
 import DiagramFilm from './sajatosztalyok/DiagramFilm'
 import Torles from './sajatosztalyok/Torles'
+import Csevego from './sajatosztalyok/Csevego'
+import Blog from './sajatosztalyok/Blog'
 
 
 class App extends Component {
@@ -92,14 +94,29 @@ class App extends Component {
                   </Link>
                 </li>
 
+                <li className="nav-item">
+                  <Link to={"/Csevego"} className="nav-link">
+                    Csevegő
+                  </Link>
+                </li>
 
+                <li className="nav-item">
+                  <Link to={"/Blog"} className="nav-link">
+                    Blog
+                  </Link>
+                </li>
+
+
+              
+
+{/* 
                 {showModeratorBoard && (
                   <li className="nav-item">
                     <Link to={"/mod"} className="nav-link">
                       Moderator
                     </Link>
                   </li>
-                )}
+                )} */}
 
 
                 {showAdminBoard && (
@@ -212,6 +229,8 @@ class App extends Component {
             <Route path="/KeresSzoveg" component={KeresSzoveg} />
             <Route path="/DiagramFilm" component={DiagramFilm} />
             <Route path="/Torles" component={Torles} />
+            <Route path="/Csevego" component={Csevego} />
+            <Route path="/Blog" component={Blog} />
           </Switch>
         </div>
       </div>

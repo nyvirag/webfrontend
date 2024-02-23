@@ -30,7 +30,7 @@ const KeresesSzoveg = () => {
 
   const izomcsopi = async () => {
     try {
-      const response = await fetch(IP.Ipcim + 'izomcsoport');
+      const response = await fetch(IP.Ipcim + 'izomcsoportok');
       const json = await response.json();
       setizomcsoportData(json);
     } catch (error) {
@@ -152,11 +152,11 @@ const KeresesSzoveg = () => {
           ) : (
             <FlatList
               data={data}
-              keyExtractor={({ gyakorlat_id }) => gyakorlat_id.toString}
+              keyExtractor={({ gyakorlat_id }) => gyakorlat_id.toString()}
               renderItem={({ item }) => (
-                <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                <View style={{ justifyContent: 'center', alignItems: 'center', height:600 }}>
                   <View style={{ flexDirection: 'row', alignItems: 'center', color: colors.feher }}>
-                    <View style={{ flex: 1, height: 1, backgroundColor: colors.feher, }} />
+                    <View style={{ flex: 3, height: 1, backgroundColor: colors.feher, }} />
                     <Text style={{ fontSize: 30, textAlign: 'center', paddingHorizontal: 8, color: colors.feher }}>
                       {item.gyakorlat_nev}
                     </Text>
@@ -165,7 +165,8 @@ const KeresesSzoveg = () => {
                   <Text style={{ fontSize: 20, textAlign: 'center', color: colors.feher }}>
                     {item.gyakorlat_leiras}
                   </Text>
-                  <Image source={{ uri: IP.Ipcim + item.gyakorlat_img }} style={{ width: 125, height: 125, marginBottom: 15, marginTop: 10, borderRadius: 10 }} />
+                  <Image source={{ uri: IP.Ipcim + item.gyakorlat_img }} style={{ width:270, height: 270, marginBottom: 15, marginTop: 10, borderRadius: 10 }} />
+             
 
 
 
