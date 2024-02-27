@@ -25,6 +25,8 @@ import DiagramFilm from './sajatosztalyok/DiagramFilm'
 import Torles from './sajatosztalyok/Torles'
 import Csevego from './sajatosztalyok/Csevego'
 import Blog from './sajatosztalyok/Blog'
+import BlogTorles from './sajatosztalyok/TorlesBlog'
+import UjBlog from "./sajatosztalyok/UjBlog";
 
 
 class App extends Component {
@@ -165,10 +167,9 @@ class App extends Component {
 
               {showAdminBoard && (<NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                <NavDropdown.Item href="/torles">Törlés Csevegő</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+               <NavDropdown.Item href="/torlesblog">Törlés Blog</NavDropdown.Item>
+               <NavDropdown.Item href="/ujblog">Új Blog</NavDropdown.Item>
+        
                 
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.5">
@@ -231,6 +232,8 @@ class App extends Component {
             <Route path="/Torles" component={Torles} />
             <Route path="/Csevego" component={Csevego} />
             <Route path="/Blog" component={Blog} />
+            <Route path="/TorlesBlog" component={BlogTorles} />
+            <Route path="/UjBlog" component={UjBlog} />
           </Switch>
         </div>
       </div>
