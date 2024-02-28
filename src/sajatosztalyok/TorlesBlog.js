@@ -79,7 +79,7 @@ const App = () => {
 
               <TouchableOpacity
                 style={styles.torlesgomb}
-                onPress={async () => torles(item.csevego_id)}
+                onPress={async () => torles(item.blog_id)}
               >
                 <Text style={{ color: colors.feher, fontWeight: "bold", fontSize: 15 }}  >Törlés</Text>
               </TouchableOpacity>

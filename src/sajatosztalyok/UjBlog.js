@@ -15,19 +15,13 @@ export default () => {
     const [bevitel2, setBevitel2] = useState('');
     const [bevitel3, setBevitel3] = useState('');
     const [blogData, setBlogData] = useState('');
-    const [refreshing, setRefreshing] = React.useState(false);
 
 
 
 
 
 
-    const onRefresh = React.useCallback(() => {
-        setRefreshing(true);
-        setTimeout(() => {
-            setRefreshing(false);
-        }, 2000);
-    }, []);
+  
 
 
     const felvitel = async () => {
@@ -45,6 +39,7 @@ export default () => {
                     setBevitel1('');
                     setBevitel2('');
                     setBevitel3('');
+                    blog();
 
                 } else {
                     console.error('Hiba a felvitelnél');
@@ -76,7 +71,7 @@ export default () => {
         } finally {
             setLoading(false);
         }
-        blog();
+        
 
     };
 
@@ -96,9 +91,7 @@ export default () => {
     return (
 
         <SafeAreaView>
-            <ScrollView refreshControl={
-                <RefreshControl refreshing={refreshing} onRefresh={onRefresh} tintColor="white" />
-            }>
+            <ScrollView>
 
                 <View style={{ flex: 1, padding: 24 }}>
                     <Text style={{
@@ -112,8 +105,8 @@ export default () => {
                         <TextInput
                             style={{ height: 90, margin: 5, backgroundColor: colors.feher, borderTopLeftRadius: 10, borderBottomEndRadius: 10,  color:'grey' , width:600, }}
                             placeholder="Add meg a dátumot!"
-                            onChangeText={newText => setBevitel1(newText)}
-                            defaultValue={bevitel1}
+                            onChangeText={newText => setBevitel2(newText)}
+                            defaultValue={bevitel2}
                         />
 
 
@@ -123,8 +116,8 @@ export default () => {
                         <TextInput
                             style={{ height: 90, margin: 5, backgroundColor: colors.feher, borderTopLeftRadius: 10, borderBottomEndRadius: 10 , color:'grey'}}
                             placeholder="Hagyj üzenetet!"
-                            onChangeText={newText => setBevitel2(newText)}
-                            defaultValue={bevitel2}
+                            onChangeText={newText => setBevitel1(newText)}
+                            defaultValue={bevitel1}
                         />
 
                         <Text style={{ padding: 10, color: colors.feher }}>
@@ -132,7 +125,7 @@ export default () => {
                         </Text>
                         <TextInput
                             style={{ height: 90, margin: 5, backgroundColor: colors.feher, borderTopLeftRadius: 10, borderBottomEndRadius: 10, color:'grey' }}
-                            placeholder="Add meg a nyelvet!"
+                            placeholder="Add meg a nyelvet! 0-magyar 1-angol"
                             onChangeText={newText => setBevitel3(newText)}
                             defaultValue={bevitel3}
                         />
