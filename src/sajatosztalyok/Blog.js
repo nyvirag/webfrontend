@@ -107,7 +107,7 @@ const KeresesSzoveg = () => {
 
 
 
-            <Text style={{fontSize:20, textAlign:'center', color:colors.feher}}>
+            <Text style={{fontSize:20, textAlign:'center', color:colors.feher, marginBottom:30}}>
               {item.blog_uzenet}
             </Text>
 

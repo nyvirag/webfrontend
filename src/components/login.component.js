@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
+import {colors} from './Cons'
 
 import AuthService from "../services/auth.service";
+import { Pressable } from "react-native-web";
 
 const required = value => {
   if (!value) {
@@ -82,7 +84,7 @@ export default class Login extends Component {
   render() {
     return (
       <div className="col-md-12">
-        <div className="card card-container">
+        <div className="card card-container" style={{backgroundColor:colors.black}}>
           <img
             src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
             alt="profile-img"
@@ -96,7 +98,7 @@ export default class Login extends Component {
             }}
           >
             <div className="form-group">
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username" style={{color:colors.feher}}>Username</label>
               <Input
                 type="text"
                 className="form-control"
@@ -108,7 +110,7 @@ export default class Login extends Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password" style={{color:colors.feher}}>Password</label>
               <Input
                 type="password"
                 className="form-control"
@@ -120,15 +122,26 @@ export default class Login extends Component {
             </div>
 
             <div className="form-group">
-              <button
+              <Pressable
                 className="btn btn-primary btn-block"
                 disabled={this.state.loading}
+                style={({ pressed }) => ({
+                  backgroundColor: pressed ? colors.black : colors.sotetlime,
+                  elevation: pressed ? 2 : 0,
+                  borderRadius: 10,
+                  shadowColor: 'black',
+                  shadowOffset: { width: 0, height: 2 },
+                  shadowRadius: 3,
+                  height:35,
+                  
+                
+                })}
               >
                 {this.state.loading && (
-                  <span className="spinner-border spinner-border-sm"></span>
+                  <span className="spinner-border spinner-border-sm" ></span>
                 )}
-                <span>Login</span>
-              </button>
+                <span style={{alignSelf:"center"}} >Login</span>
+              </Pressable>
             </div>
 
             {this.state.message && (

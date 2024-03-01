@@ -27,6 +27,8 @@ import Csevego from './sajatosztalyok/Csevego'
 import Blog from './sajatosztalyok/Blog'
 import BlogTorles from './sajatosztalyok/TorlesBlog'
 import UjBlog from "./sajatosztalyok/UjBlog";
+import NoiEtrend from "./sajatosztalyok/NoiEtrend"
+import FerfiEtrend from './sajatosztalyok/FerfiEtrend'
 
 
 class App extends Component {
@@ -108,6 +110,18 @@ class App extends Component {
                   </Link>
                 </li>
 
+                <li className="nav-item">
+                  <Link to={"/NoiEtrend"} className="nav-link">
+                  Női Étrend
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to={"/FerfiEtrend"} className="nav-link">
+                  Férfi Étrend
+                  </Link>
+                </li>
+
 
               
 
@@ -120,14 +134,14 @@ class App extends Component {
                   </li>
                 )} */}
 
-
+{/* 
                 {showAdminBoard && (
                   <li className="nav-item">
                     <Link to={"/Admin"} className="nav-link">
                       Admin
                     </Link>
                   </li>
-                )}
+                )} */}
 
 
                 {/* {showAdminBoard && (
@@ -225,8 +239,8 @@ class App extends Component {
 
             <Route path="/Admin" component={Admin} />
             <Route path="/Kereses" component={Kereses} />
-            <Route path="/Proba" component={Proba} />
-            <Route path="/ProbaAdmin" component={ProbaAdmin} />
+            {/* <Route path="/Proba" component={Proba} /> */}
+            {/* <Route path="/ProbaAdmin" component={ProbaAdmin}/> */}
             <Route path="/KeresSzoveg" component={KeresSzoveg} />
             <Route path="/DiagramFilm" component={DiagramFilm} />
             <Route path="/Torles" component={Torles} />
@@ -234,6 +248,8 @@ class App extends Component {
             <Route path="/Blog" component={Blog} />
             <Route path="/TorlesBlog" component={BlogTorles} />
             <Route path="/UjBlog" component={UjBlog} />
+            <Route path="/NoiEtrend" component={NoiEtrend} />
+            <Route path="/FerfiEtrend" component={FerfiEtrend} />
           </Switch>
         </div>
       </div>

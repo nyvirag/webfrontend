@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Redirect } from "react-router-dom";
 import AuthService from "../services/auth.service";
+import {colors} from './Cons'
 
 export default class Profile extends Component {
   constructor(props) {
@@ -31,9 +32,9 @@ export default class Profile extends Component {
       <div className="container">
         {(this.state.userReady) ?
         <div>
-        <header className="jumbotron">
+        <header className="jumbotron card card-container" style={{backgroundColor:colors.black, }}>
           <h3>
-            <strong>Üdvözlet {currentUser.username} !!!</strong> 
+            <strong style={{color:colors.sotetlime}}>Üdvözlet {currentUser.username} !!!</strong> 
           </h3>
         </header>
          {/*

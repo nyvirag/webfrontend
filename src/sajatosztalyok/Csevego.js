@@ -41,6 +41,8 @@ export default () => {
         alert("Sikeres felvitel");
         setBevitel1('');
         setBevitel2('');
+        csevego();
+    // window.location.reload(false);
         
       } else {
         console.error('Hiba a felvitelnél');
@@ -67,13 +69,14 @@ export default () => {
       const response = await fetch(IP.Ipcim+'csevegole');
       const json = await response.json();
       setCsevegodata(json);
+      
     } catch (error) {
       console.error(error);
     } finally {
       setLoading(false);
+      
     }
-    csevego();
-    
+    // csevego();
   };
 
   useEffect(() => {
@@ -96,7 +99,7 @@ export default () => {
 <RefreshControl refreshing={refreshing} onRefresh={onRefresh}  tintColor="white"/>
 }>
 
-<View style={{flex: 1, padding: 24}}>
+<View style={{flex: 1, padding: 24, alignSelf:'center'}}>
 <Text  style={{ fontSize:30, textAlign:'center', color:colors.feher, marginTop:30, marginBottom:5, padding:30, paddingHorizontal:60, 
                backgroundColor: colors.black, borderWidth:2, borderColor:colors.sotetlime, alignSelf:'center', borderRadius:4,}}>Csevegő</Text>
             <View style={{marginTop:40}}>
@@ -104,7 +107,7 @@ export default () => {
       E-mail cím:
       </Text>
       <TextInput
-        style={{height: 50, margin:5, backgroundColor:colors.feher, borderTopLeftRadius:10, borderBottomEndRadius:10}}
+        style={{height: 50, margin:5, backgroundColor:colors.feher, borderTopLeftRadius:10, borderBottomEndRadius:10,  width:600}}
         placeholder="E-mail"
         onChangeText={newText => setBevitel1(newText)}
         defaultValue={bevitel1}

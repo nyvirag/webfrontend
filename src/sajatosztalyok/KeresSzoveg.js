@@ -104,15 +104,17 @@ const KeresesSzoveg = () => {
       <ScrollView >
 
 
-        <View style={{ flex: 1, padding: 24, marginTop:50  , backgroundColor:colors.black}}>
+        <View style={{ flex: 1, padding: 24, marginTop:50  ,backgroundColor:colors.black}}>
           <Picker
         
             selectedValue={kivalasztott}
             dropdownIconColor={colors.sotetlime}
             onValueChange={(itemValue, itemIndex) =>
               kivalasztottData(itemValue)
+              
 
-            }>
+            } 
+            style={{width:250, height:50, alignSelf:'center', marginBottom:30, borderRadius:10}}>
 
 
 
@@ -155,18 +157,18 @@ const KeresesSzoveg = () => {
               keyExtractor={({ gyakorlat_id }) => gyakorlat_id.toString()}
               renderItem={({ item }) => (
                 <View style={{ justifyContent: 'center', alignItems: 'center', height:600 }}>
-                  <View style={{ flexDirection: 'row', alignItems: 'center', color: colors.feher }}>
-                    <View style={{ flex: 3, height: 1, backgroundColor: colors.feher, }} />
+                 
+                    <View style={{justifyContent:'center', marginBottom:5, borderRadius:3, alignItems:'center',   backgroundColor: colors.black, borderWidth:2, borderColor:colors.sotetlime,}}>
                     <Text style={{ fontSize: 30, textAlign: 'center', paddingHorizontal: 8, color: colors.feher }}>
                       {item.gyakorlat_nev}
                     </Text>
-                    <View style={{ flex: 1, height: 1, backgroundColor: colors.feher, color: colors.feher }} />
-                  </View>
+                    
+            
                   <Text style={{ fontSize: 20, textAlign: 'center', color: colors.feher }}>
                     {item.gyakorlat_leiras}
                   </Text>
                   <Image source={{ uri: IP.Ipcim + item.gyakorlat_img }} style={{ width:270, height: 270, marginBottom: 15, marginTop: 10, borderRadius: 10 }} />
-             
+             </View>
 
 
 
