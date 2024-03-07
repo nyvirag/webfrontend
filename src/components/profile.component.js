@@ -29,10 +29,10 @@ export default class Profile extends Component {
     const { currentUser } = this.state;
 
     return (
-      <div className="container">
+      <div className="container" >
         {(this.state.userReady) ?
-        <div>
-        <header className="jumbotron card card-container" style={{backgroundColor:colors.black, }}>
+        <div >
+        <header className="jumbotron card card-container" >
           <h3>
             <strong style={{color:colors.sotetlime}}>Üdvözlet {currentUser.username} !!!</strong> 
           </h3>
