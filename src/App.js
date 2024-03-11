@@ -14,6 +14,7 @@ import BoardModerator from "./components/board-moderator.component";
 
 
 
+
 import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 
 import Admin from './sajatosztalyok/Admin'
@@ -29,6 +30,8 @@ import BlogTorles from './sajatosztalyok/TorlesBlog'
 import UjBlog from "./sajatosztalyok/UjBlog";
 import NoiEtrend from "./sajatosztalyok/NoiEtrend"
 import FerfiEtrend from './sajatosztalyok/FerfiEtrend'
+
+
 
 
 class App extends Component {
@@ -67,18 +70,21 @@ class App extends Component {
       <div >
         <Navbar collapseOnSelect expand="lg" bg="#252525" variant="dark" className="navbar-shadow" >
 
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="mr-auto">
+          <Navbar.Collapse id="responsive-navbar-nav" >
+
+            <Nav className="mr-auto"  >
+              <div className="topnav-centered">
               <Link to={"/"} className="navbar-brand">
                 Záródoga
               </Link>
-              <div className="navbar-nav mr-auto">
+              </div>
 
-                <li className="nav-item">
+              <div className="navbar-nav mr-auto">
+                {/* <li className="nav-item">
                   <Link to={"/Kereses"} className="nav-link">
                     Keresés
                   </Link>
-                </li>
+                </li> */}
 
                 {/* <li className="nav-item">
                   <Link to={"/DiagramFilm"} className="nav-link">
@@ -92,7 +98,7 @@ class App extends Component {
                   </Link>
                 </li> */}
 
-                <li className="nav-item">
+                <li className="nav-item" >
                   <Link to={"/KeresSzoveg"} className="nav-link">
                     Gyakorlatok
                   </Link>
@@ -112,20 +118,24 @@ class App extends Component {
 
                 <li className="nav-item">
                   <Link to={"/NoiEtrend"} className="nav-link">
-                  Női Étrend
+                    Női Étrend
                   </Link>
                 </li>
 
                 <li className="nav-item">
                   <Link to={"/FerfiEtrend"} className="nav-link">
-                  Férfi Étrend
+                    Férfi Étrend
                   </Link>
                 </li>
 
 
-              
 
-{/* 
+
+
+
+
+
+                {/* 
                 {showModeratorBoard && (
                   <li className="nav-item">
                     <Link to={"/mod"} className="nav-link">
@@ -134,7 +144,7 @@ class App extends Component {
                   </li>
                 )} */}
 
-{/* 
+                {/* 
                 {showAdminBoard && (
                   <li className="nav-item">
                     <Link to={"/Admin"} className="nav-link">
@@ -152,13 +162,7 @@ class App extends Component {
                   </li>
                 )} */}
 
-                {/* {showAdminBoard && (
-                  <li className="nav-item">
-                    <Link to={"/ProbaAdmin"} className="nav-link">
-                      PróbaAdmin
-                    </Link>
-                  </li>
-                )} */}
+               
 
 
                 {/* {showAdminBoard && (
@@ -168,6 +172,15 @@ class App extends Component {
                     </Link>
                   </li>
                 )} */}
+
+
+                {showAdminBoard && (
+                  <li className="nav-item">
+                    <Link to={"/UjBlog"} className="nav-link">
+                      Új blog
+                    </Link>
+                  </li>
+                )}
 
                 {currentUser && (
                   <li className="nav-item">
@@ -179,12 +192,12 @@ class App extends Component {
               </div>
 
 
-              {showAdminBoard && (<NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-               <NavDropdown.Item href="/torles">Törlés Csevegő</NavDropdown.Item>
-               <NavDropdown.Item href="/torlesblog">Törlés Blog</NavDropdown.Item>
-               <NavDropdown.Item href="/ujblog">Új Blog</NavDropdown.Item>
-        
-                
+              {showAdminBoard && (<NavDropdown title="Törlések" id="collasible-nav-dropdown">
+                <NavDropdown.Item href="/torles">Törlés Csevegő</NavDropdown.Item>
+                <NavDropdown.Item href="/torlesblog">Törlés Blog</NavDropdown.Item>
+               
+
+
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action/3.5">
                   Separated link
@@ -250,6 +263,8 @@ class App extends Component {
             <Route path="/UjBlog" component={UjBlog} />
             <Route path="/NoiEtrend" component={NoiEtrend} />
             <Route path="/FerfiEtrend" component={FerfiEtrend} />
+          
+
           </Switch>
         </div>
       </div>

@@ -11,5 +11,6 @@ export const colors={
     feher:'#f5f5f5',
     elenkzold:'#5ae717',
     limezold:'#c2e06a',
-    sotetlime:"#82b72a"
+    sotetlime:"#82b72a",
+    szurke:"#f1efef"
   }

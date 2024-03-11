@@ -163,7 +163,7 @@ export default () => {
                         keyExtractor={({ blog_id }) => blog_id}
                         renderItem={({ item }) => (
 
-                            <View style={{ justifyContent: 'center', marginBottom: 15, borderRadius: 3, alignItems: 'center', backgroundColor: colors.black, borderWidth: 2, borderColor: colors.sotetlime, }}>
+                            <View style={{ justifyContent: 'center', marginBottom: 15, borderRadius: 3, alignItems: 'center', borderWidth: 2, borderColor: colors.sotetlime, }}>
 
 
 

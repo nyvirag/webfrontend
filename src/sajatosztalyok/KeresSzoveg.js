@@ -104,7 +104,7 @@ const KeresesSzoveg = () => {
       <ScrollView >
 
 
-        <View style={{ flex: 1, padding: 24, marginTop:50  ,backgroundColor:colors.black}}>
+        <View style={{ flex: 1, padding: 24, marginTop:50  }}>
           <Picker
         
             selectedValue={kivalasztott}
@@ -140,6 +140,8 @@ const KeresesSzoveg = () => {
             shadowColor: 'black',
             shadowOffset: { width: 0, height: 2 },
             shadowRadius: 3,
+            width:300, 
+            alignSelf:'center'
 
           })} >
 
@@ -158,7 +160,7 @@ const KeresesSzoveg = () => {
               renderItem={({ item }) => (
                 <View style={{ justifyContent: 'center', alignItems: 'center', height:600 }}>
                  
-                    <View style={{justifyContent:'center', marginBottom:5, borderRadius:3, alignItems:'center',   backgroundColor: colors.black, borderWidth:2, borderColor:colors.sotetlime,}}>
+                    <View style={{justifyContent:'center', marginBottom:5, borderRadius:3, alignItems:'center', borderWidth:2, borderColor:colors.sotetlime,}}>
                     <Text style={{ fontSize: 30, textAlign: 'center', paddingHorizontal: 8, color: colors.feher }}>
                       {item.gyakorlat_nev}
                     </Text>

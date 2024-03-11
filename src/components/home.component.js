@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import {colors} from './Cons'
 import UserService from "../services/user.service";
 
 export default class Home extends Component {
@@ -32,8 +32,8 @@ export default class Home extends Component {
   render() {
     return (
       <div className="container">
-        <header className="jumbotron">
-          <h3>Üdvözlet</h3>
+        <header className="jumbotron card" style={{backgroundColor:colors.black, }}>
+          <h3 style={{color:colors.feher, textAlign:"center"}}>Üdvözlet</h3>
         </header>
       </div>
     );

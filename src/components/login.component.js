@@ -98,26 +98,32 @@ export default class Login extends Component {
             }}
           >
             <div className="form-group">
-              <label htmlFor="username" style={{color:colors.feher}}>Username</label>
+              <label htmlFor="username" style={{color:colors.feher}}></label>
               <Input
                 type="text"
                 className="form-control"
                 name="username"
+                placeholder="Username:"
                 value={this.state.username}
                 onChange={this.onChangeUsername}
                 validations={[required]}
+                style={{marginTop:40, marginBottom:40, backgroundColor:colors.szurke}}
+                
+                
               />
             </div>
 
             <div className="form-group">
-              <label htmlFor="password" style={{color:colors.feher}}>Password</label>
+              <label htmlFor="password" style={{color:colors.feher}}></label>
               <Input
                 type="password"
+                placeholder="Password:"
                 className="form-control"
                 name="password"
                 value={this.state.password}
                 onChange={this.onChangePassword}
                 validations={[required]}
+                style={{ marginBottom:40, backgroundColor:colors.szurke}}
               />
             </div>
 
@@ -128,7 +134,7 @@ export default class Login extends Component {
                 style={({ pressed }) => ({
                   backgroundColor: pressed ? colors.black : colors.sotetlime,
                   elevation: pressed ? 2 : 0,
-                  borderRadius: 10,
+                  borderRadius: 8,
                   shadowColor: 'black',
                   shadowOffset: { width: 0, height: 2 },
                   shadowRadius: 3,
@@ -140,7 +146,7 @@ export default class Login extends Component {
                 {this.state.loading && (
                   <span className="spinner-border spinner-border-sm" ></span>
                 )}
-                <span style={{alignSelf:"center"}} >Login</span>
+                <span style={{alignSelf:"center", marginTop:3}} >Login</span>
               </Pressable>
             </div>
 

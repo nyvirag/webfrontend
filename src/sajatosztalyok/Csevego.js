@@ -104,11 +104,11 @@ export default () => {
                backgroundColor: colors.black, borderWidth:2, borderColor:colors.sotetlime, alignSelf:'center', borderRadius:4,}}>Csevegő</Text>
             <View style={{marginTop:40}}>
       <Text style={{padding: 10, color:colors.feher}}>
-      E-mail cím:
+     
       </Text>
       <TextInput
-        style={{height: 50, margin:5, backgroundColor:colors.feher, borderTopLeftRadius:10, borderBottomEndRadius:10,  width:600}}
-        placeholder="E-mail"
+        style={{height: 50, margin:5, backgroundColor:colors.feher, borderTopLeftRadius:10, borderBottomEndRadius:10,  width:600, }}
+        placeholder="E-mail:"
         onChangeText={newText => setBevitel1(newText)}
         defaultValue={bevitel1}
         onBlur={() => {
@@ -119,11 +119,11 @@ export default () => {
         }}
       />
    <Text style={{padding: 10, color:colors.feher}}>
-        Üzenet: 
+       
       </Text>
 <TextInput
-        style={{height: 90, margin:5, backgroundColor:colors.feher, borderTopLeftRadius:10, borderBottomEndRadius:10}}
-        placeholder="Hagyj üzenetet!"
+        style={{height: 90, margin:5, backgroundColor:colors.feher, borderTopLeftRadius:10, borderBottomEndRadius:10,}}
+        placeholder="Üzenet:"
         onChangeText={newText => setBevitel2(newText)}
         defaultValue={bevitel2}
       />
@@ -161,12 +161,12 @@ export default () => {
           keyExtractor={({gyakorlat_id}) => gyakorlat_id}
           renderItem={({item}) => (
 
-            <View style={{justifyContent:'center', marginBottom:15, borderRadius:3, alignItems:'center',   backgroundColor: colors.black, borderWidth:2, borderColor:colors.sotetlime,}}>
+            <View style={{justifyContent:'center', marginBottom:15, borderRadius:3, alignItems:'center',   borderWidth:2, borderColor:colors.sotetlime,}}>
            
 
            
             <Text style={{ fontSize:19, textAlign:'center', paddingHorizontal:8, padding:30, color:colors.feher,}} >{csillagoz(item.csevego_email)}</Text>
-            <Text style={{ fontSize:19, textAlign:'center', paddingHorizontal:8, color:colors.feher}}>
+            <Text style={{ fontSize:19, textAlign:'center', paddingHorizontal:8, padding:30, color:colors.feher}}>
               {item.csevego_uzenet}
             </Text>
 

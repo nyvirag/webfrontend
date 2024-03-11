@@ -3,6 +3,7 @@ import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
+import {colors} from './Cons'
 
 import AuthService from "../services/auth.service";
 
@@ -139,43 +140,52 @@ export default class Register extends Component {
             {!this.state.successful && (
               <div>
                 <div className="form-group">
-                  <label htmlFor="username">Username</label>
+                  <label htmlFor="username"></label>
                   <Input
                     type="text"
                     className="form-control"
+                    placeholder="Username:"
                     name="username"
                     value={this.state.username}
                     onChange={this.onChangeUsername}
                     validations={[required, vusername]}
+                    style={{backgroundColor:colors.szurke}}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email">Email</label>
+                  <label htmlFor="email"></label>
                   <Input
                     type="text"
+                    
+                    placeholder="Email:"
                     className="form-control"
                     name="email"
                     value={this.state.email}
                     onChange={this.onChangeEmail}
                     validations={[required, email]}
+                    style={{backgroundColor:colors.szurke}}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="password">Password</label>
+                  <label htmlFor="password"></label>
                   <Input
+                  placeholder="Password:"
+                  
                     type="password"
                     className="form-control"
                     name="password"
                     value={this.state.password}
                     onChange={this.onChangePassword}
                     validations={[required, vpassword]}
+                    style={{backgroundColor:colors.szurke}}
                   />
                 </div>
 
                 <div className="form-group">
-                  <button className="btn btn-primary btn-block">Sign Up</button>
+                  <button className="btn btn-primary btn-block" style={{backgroundColor:colors.sotetlime, borderColor:colors.sotetlime, color:colors.black}}>Sign Up</button>
+                  
                 </div>
               </div>
             )}
